@@ -15,11 +15,8 @@
 [node name="Environment" parent="." instance=ExtResource("1_sscwm")]
 metadata/_edit_lock_ = true
 
-[node name="Player" parent="." instance=ExtResource("3_b4krb")]
-position = Vector2(0, 41)
-
 [node name="Ball" parent="." instance=ExtResource("2_58ufe")]
-position = Vector2(322, 421)
+position = Vector2(322, 420)
 
 [node name="RedBLocks" type="Node2D" parent="."]
 
@@ -310,3 +307,5 @@ position = Vector2(560, 48)
 [node name="Sprite" type="Sprite2D" parent="YellowBlocks/Block40"]
 texture = ExtResource("9_017bd")
 centered = false
+
+[node name="Player" parent="." instance=ExtResource("3_b4krb")]
