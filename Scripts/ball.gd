@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @export var y_speed := -250
 @export var angle := [-250,250]
+@export var drop_probability := 0.2
+@export var item_scene := preload("res://Scenes/power_up_item.tscn")
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("start") and !GameManager.started:
@@ -15,7 +17,15 @@ func _physics_process(delta: float) -> void:
 			var collided_object = collison.get_collider()
 			if "Block" in collided_object.name:
 				collided_object.queue_free()
+				spawm_power_up(collided_object.get_position())
 
 func play_game():
 	GameManager.started = true
 	velocity = Vector2(angle.pick_random(), y_speed)
+	
+func spawm_power_up(position : Vector2):
+	if randf() < drop_probability:
+		var item = item_scene.instantiate()
+		item.position = position
+		get_parent().add_child(item)
+	
