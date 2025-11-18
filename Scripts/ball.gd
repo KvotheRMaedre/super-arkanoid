@@ -11,6 +11,10 @@ func _physics_process(delta: float) -> void:
 		var collison = move_and_collide(velocity * delta)
 		if collison != null:
 			velocity = velocity.bounce(collison.get_normal())
+			
+			var collided_object = collison.get_collider()
+			if "Block" in collided_object.name:
+				collided_object.queue_free()
 
 func play_game():
 	GameManager.started = true
