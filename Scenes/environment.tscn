@@ -18,24 +18,32 @@ texture = ExtResource("1_succ8")
 centered = false
 
 [node name="LeftWall" type="StaticBody2D" parent="."]
+collision_layer = 32
+collision_mask = 3
 
 [node name="Collision" type="CollisionShape2D" parent="LeftWall"]
 position = Vector2(-10.5, 240)
 shape = SubResource("RectangleShape2D_n4ctw")
 
 [node name="RightWall" type="StaticBody2D" parent="."]
+collision_layer = 32
+collision_mask = 3
 
 [node name="Collision" type="CollisionShape2D" parent="RightWall"]
 position = Vector2(650, 240)
 shape = SubResource("RectangleShape2D_n4ctw")
 
 [node name="TopWall" type="StaticBody2D" parent="."]
+collision_layer = 32
+collision_mask = 2
 
 [node name="Collision" type="CollisionShape2D" parent="TopWall"]
 position = Vector2(319.75, -10)
 shape = SubResource("RectangleShape2D_ptpdg")
 
 [node name="DeathZone" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 10
 
 [node name="Collision" type="CollisionShape2D" parent="DeathZone"]
 position = Vector2(320, 492.75)

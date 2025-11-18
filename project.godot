@@ -44,6 +44,16 @@ start={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="ball"
+2d_physics/layer_3="block"
+2d_physics/layer_4="collectable"
+2d_physics/layer_5="shot"
+2d_physics/layer_6="wall"
+2d_physics/layer_7="deathZone"
+
 [rendering]
 
 renderer/rendering_method="mobile"
