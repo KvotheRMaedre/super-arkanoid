@@ -8,7 +8,7 @@ size = Vector2(100, 24)
 [node name="Player" type="CharacterBody2D"]
 
 [node name="Sprite" type="Sprite2D" parent="."]
-position = Vector2(320, 395)
+position = Vector2(270, 395)
 texture = ExtResource("1_eabup")
 centered = false
 
