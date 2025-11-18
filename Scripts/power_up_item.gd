@@ -10,5 +10,6 @@ func _physics_process(delta: float) -> void:
 	var collision = move_and_collide(velocity * delta)
 	if collision != null:
 		var collision_object = collision.get_collider()
-		if "Player" in collision_object.name:
-			print("Coletado arrasou mana")
+		if collision_object.name == "Player":
+			GameManager.on_powerup.emit()
+			queue_free()

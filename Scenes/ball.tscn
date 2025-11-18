@@ -16,3 +16,7 @@ texture = ExtResource("1_q3db8")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_kfkay")
+
+[node name="ItemPowerUpTimer" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true

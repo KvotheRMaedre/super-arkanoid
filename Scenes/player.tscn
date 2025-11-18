@@ -19,3 +19,8 @@ centered = false
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_by7pk")
+
+[node name="SpawnShot" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="SpawnShot" to="." method="_on_spawn_shot_timeout"]

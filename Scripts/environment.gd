@@ -3,11 +3,9 @@ extends Node2D
 @onready var timer_reset: Timer = $TimerReset
 
 func _on_death_zone_body_entered(body: Node2D) -> void:
-	
 	if body.name == "Ball":
 		timer_reset.start()
-		body.queue_free()
-
+	body.queue_free()
 
 func _on_timer_reset_timeout() -> void:
 	GameManager.started = false
