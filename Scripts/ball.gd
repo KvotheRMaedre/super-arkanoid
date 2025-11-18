@@ -6,7 +6,11 @@ extends CharacterBody2D
 func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("start") and !GameManager.started:
 		play_game()
-	move_and_collide(velocity * delta)
+
+	if GameManager.started:
+		var collison = move_and_collide(velocity * delta)
+		if collison != null:
+			velocity = velocity.bounce(collison.get_normal())
 
 func play_game():
 	GameManager.started = true
