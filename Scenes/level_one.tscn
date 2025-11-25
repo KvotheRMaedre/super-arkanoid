@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://8i0sw8cy1fgs"]
+[gd_scene load_steps=13 format=3 uid="uid://8i0sw8cy1fgs"]
 
 [ext_resource type="Script" path="res://Scripts/level_one.gd" id="1_3rw4o"]
 [ext_resource type="PackedScene" uid="uid://d1pfcjupej81" path="res://Scenes/environment.tscn" id="1_sscwm"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://fsb1hgb8wd5" path="res://Assets/BlueBlock.png" id="8_7bxq6"]
 [ext_resource type="Texture2D" uid="uid://ubdptctk12ej" path="res://Assets/GrayBlock.png" id="8_hq7rd"]
 [ext_resource type="Texture2D" uid="uid://ci01kph3r60cs" path="res://Assets/YellowBlock.png" id="9_017bd"]
+[ext_resource type="AudioStream" uid="uid://d3w343f3w657u" path="res://Assets/Sounds/level1.ogg" id="12_s0jjv"]
 
 [node name="LevelOne" type="Node2D"]
 script = ExtResource("1_3rw4o")
@@ -428,3 +429,8 @@ position = Vector2(321, 414)
 
 [node name="Player" parent="." instance=ExtResource("3_b4krb")]
 position = Vector2(321, 442)
+
+[node name="AudioBG" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_s0jjv")
+volume_db = 10.0
+autoplay = true

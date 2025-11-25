@@ -4,7 +4,6 @@ func check_if_block_exists():
 	for group in get_children():
 		for child in group.get_children():
 			if child.name.contains("Block"):
-				print("Ainda tem")
 				return true
 	goto_next_level()
 
