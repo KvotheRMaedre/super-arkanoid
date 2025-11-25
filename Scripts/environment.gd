@@ -14,4 +14,4 @@ func _on_death_zone_body_entered(body: Node2D) -> void:
 
 func _on_timer_reset_timeout() -> void:
 	GameManager.reset_game()
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://Scenes/level_one.tscn")

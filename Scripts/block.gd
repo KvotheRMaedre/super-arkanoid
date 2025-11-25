@@ -7,6 +7,8 @@ extends StaticBody2D
 func take_damage() -> bool:
 	lives_block -= 1
 	if lives_block == 0:
+		get_parent().get_parent().call_deferred("check_if_block_exists")
+		get_parent().remove_child(self)
 		queue_free()
 		return true
 	on_damage_receive()

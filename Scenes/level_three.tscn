@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://buhqlov1acanu"]
+[gd_scene load_steps=11 format=3 uid="uid://buhqlov1acanu"]
 
+[ext_resource type="Script" path="res://Scripts/level_three.gd" id="1_uoemt"]
 [ext_resource type="PackedScene" uid="uid://d1pfcjupej81" path="res://Scenes/environment.tscn" id="1_wsvuq"]
 [ext_resource type="PackedScene" uid="uid://bl6351hmnk701" path="res://Scenes/block.tscn" id="2_52x23"]
 [ext_resource type="Texture2D" uid="uid://cifsnn2kaacnt" path="res://Assets/RedBlock.png" id="3_cdnl4"]
@@ -11,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cwkkwqiphve72" path="res://Scenes/player.tscn" id="9_uppp6"]
 
 [node name="LevelThree" type="Node2D"]
+script = ExtResource("1_uoemt")
 
 [node name="Environment" parent="." instance=ExtResource("1_wsvuq")]
 metadata/_edit_lock_ = true
