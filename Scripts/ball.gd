@@ -10,7 +10,7 @@ extends CharacterBody2D
 func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("start") and !GameManager.started:
 		play_game()
-
+		
 	if GameManager.started:
 		var collison = move_and_collide(velocity * delta)
 		if collison != null:
@@ -31,4 +31,9 @@ func spawm_power_up(position : Vector2):
 		item.position = position
 		get_parent().add_child(item)
 		item_power_up_timer.start()
+	
+func reset_position():
+	var player = get_parent().get_node("Player")
+	position = Vector2(player.position.x, player.position.y - 25)
+	GameManager.started = false
 	
