@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://d1pfcjupej81"]
+[gd_scene load_steps=10 format=3 uid="uid://d1pfcjupej81"]
 
 [ext_resource type="Script" path="res://Scripts/environment.gd" id="1_odry6"]
 [ext_resource type="Texture2D" uid="uid://b2u6rg1tdid3v" path="res://Assets/Background.png" id="1_succ8"]
 [ext_resource type="Shader" path="res://Shadres/background.gdshader" id="2_7tdug"]
 [ext_resource type="PackedScene" uid="uid://ca824ora3ppx6" path="res://Scenes/hud.tscn" id="3_m2cpg"]
+[ext_resource type="AudioStream" uid="uid://4qjjyiqwecrs" path="res://Assets/Sounds/death.wav" id="5_ue4nj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pa47e"]
 shader = ExtResource("2_7tdug")
@@ -66,6 +67,9 @@ one_shot = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("3_m2cpg")]
+
+[node name="AudioDeath" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_ue4nj")
 
 [connection signal="body_entered" from="DeathZone" to="." method="_on_death_zone_body_entered"]
 [connection signal="timeout" from="TimerReset" to="." method="_on_timer_reset_timeout"]

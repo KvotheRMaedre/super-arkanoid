@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://buhqlov1acanu"]
+[gd_scene load_steps=13 format=3 uid="uid://buhqlov1acanu"]
 
 [ext_resource type="Script" path="res://Scripts/level_three.gd" id="1_uoemt"]
 [ext_resource type="PackedScene" uid="uid://d1pfcjupej81" path="res://Scenes/environment.tscn" id="1_wsvuq"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://7pdh0uasxch3" path="res://Scenes/ball.tscn" id="8_d8qav"]
 [ext_resource type="PackedScene" uid="uid://cwkkwqiphve72" path="res://Scenes/player.tscn" id="9_uppp6"]
 [ext_resource type="AudioStream" uid="uid://dk52rsvrggkqp" path="res://Assets/Sounds/level3.ogg" id="11_2o4r8"]
+[ext_resource type="AudioStream" uid="uid://bkxcqjlr2hxyd" path="res://Assets/Sounds/levelup.wav" id="12_e26fh"]
 
 [node name="LevelThree" type="Node2D"]
 script = ExtResource("1_uoemt")
@@ -472,3 +473,7 @@ position = Vector2(321, 442)
 stream = ExtResource("11_2o4r8")
 volume_db = 10.0
 autoplay = true
+
+[node name="AudioLevelUp" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_e26fh")
+volume_db = -10.0

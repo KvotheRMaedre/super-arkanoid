@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var item_scene := preload("res://Scenes/power_up_item.tscn")
 
 @onready var item_power_up_timer: Timer = $ItemPowerUpTimer
+@onready var audio_collision: AudioStreamPlayer2D = $AudioCollision
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("start") and !GameManager.started:
@@ -13,6 +14,7 @@ func _physics_process(delta: float) -> void:
 	if GameManager.started:
 		var collison = move_and_collide(velocity * delta)
 		if collison != null:
+			audio_collision.play()
 			velocity = velocity.bounce(collison.get_normal())
 			
 			var collided_object = collison.get_collider()

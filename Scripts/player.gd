@@ -3,6 +3,8 @@ extends CharacterBody2D
 @export var speed := 400
 
 @onready var spawn_shot: Timer = $SpawnShot
+@onready var audio_shoot: AudioStreamPlayer2D = $AudioShoot
+
 var bullet_scene := preload("res://Scenes/bullet.tscn")
 var max_bullet := 20
 var current_bullet := 0
@@ -21,6 +23,8 @@ func _physics_process(delta: float) -> void:
 	move_and_collide(velocity * delta)
 
 func spawn_bullet():
+	audio_shoot.play()
+	
 	var left_shoot_instance = bullet_scene.instantiate()
 	get_parent().add_child(left_shoot_instance)
 	left_shoot_instance.global_position.x = global_position.x - 35
