@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bl6351hmnk701"]
+[gd_scene load_steps=3 format=3 uid="uid://bl6351hmnk701"]
+
+[ext_resource type="Script" path="res://Scripts/block.gd" id="1_j457n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c7ou6"]
 size = Vector2(80, 24)
@@ -6,6 +8,7 @@ size = Vector2(80, 24)
 [node name="Block" type="StaticBody2D"]
 collision_layer = 4
 collision_mask = 18
+script = ExtResource("1_j457n")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(40, 12)

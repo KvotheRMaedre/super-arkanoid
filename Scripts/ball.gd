@@ -17,9 +17,10 @@ func _physics_process(delta: float) -> void:
 			
 			var collided_object = collison.get_collider()
 			if "Block" in collided_object.name:
-				GameManager.add_point(5)
-				collided_object.queue_free()
-				spawm_power_up(collided_object.get_position())
+				var destroyed = collided_object.take_damage()
+				if destroyed:
+					GameManager.add_point(5)
+					spawm_power_up(collided_object.get_position())
 	
 func play_game():
 	GameManager.started = true
