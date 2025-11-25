@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://ca824ora3ppx6"]
+
+[ext_resource type="FontFile" uid="uid://bnqj62k6so4xt" path="res://Assets/Fonts/Flatwheat-Regular.ttf" id="1_m3f4r"]
+[ext_resource type="Script" path="res://Scripts/hud.gd" id="1_og7ph"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4vejn"]
+font = ExtResource("1_m3f4r")
+font_size = 20
+shadow_size = 6
+shadow_color = Color(0, 0, 0, 0.313726)
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_og7ph")
+
+[node name="LabelPoints" type="Label" parent="."]
+layout_mode = 1
+offset_left = 7.0
+offset_top = 8.0
+offset_right = 149.0
+offset_bottom = 36.0
+text = "Pontos: "
+label_settings = SubResource("LabelSettings_4vejn")
+uppercase = true
+
+[node name="LabelRecord" type="Label" parent="."]
+layout_mode = 1
+offset_left = 503.0
+offset_top = 8.0
+offset_right = 645.0
+offset_bottom = 36.0
+text = "Record: "
+label_settings = SubResource("LabelSettings_4vejn")
+uppercase = true
+
+[node name="LabelLives" type="Label" parent="."]
+layout_mode = 1
+offset_left = 549.0
+offset_top = 453.0
+offset_right = 691.0
+offset_bottom = 481.0
+text = "Vidas: "
+label_settings = SubResource("LabelSettings_4vejn")
+uppercase = true
