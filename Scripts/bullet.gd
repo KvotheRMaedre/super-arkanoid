@@ -8,5 +8,6 @@ func _physics_process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if "Block" in body.name:
+		GameManager.add_point(1)
 		body.queue_free()
 		queue_free()

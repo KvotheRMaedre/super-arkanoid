@@ -53,7 +53,3 @@ start={
 2d_physics/layer_5="shot"
 2d_physics/layer_6="wall"
 2d_physics/layer_7="deathZone"
-
-[rendering]
-
-renderer/rendering_method="mobile"

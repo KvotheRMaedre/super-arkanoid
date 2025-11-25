@@ -10,7 +10,6 @@ extends CharacterBody2D
 func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("start") and !GameManager.started:
 		play_game()
-		
 	if GameManager.started:
 		var collison = move_and_collide(velocity * delta)
 		if collison != null:
@@ -18,6 +17,7 @@ func _physics_process(delta: float) -> void:
 			
 			var collided_object = collison.get_collider()
 			if "Block" in collided_object.name:
+				GameManager.add_point(5)
 				collided_object.queue_free()
 				spawm_power_up(collided_object.get_position())
 	
